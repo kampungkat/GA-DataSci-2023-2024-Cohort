@@ -8,7 +8,7 @@ Created on Mon Feb  3 14:45:21 2020
 """
 Modified on Sun Feb 17 22:50:00 2023
 
-@editor: kampungkat
+@editor: kampungkat / AG
 """
 
 # Python for data I
