@@ -5,6 +5,12 @@ Created on Mon Feb  3 14:45:21 2020
 @author: msmorris
 """
 
+"""
+Modified on Sun Feb 17 22:50:00 2023
+
+@editor: kampungkat
+"""
+
 # Python for data I
 # Matthew Morris 
 ###############################################################################
@@ -313,12 +319,29 @@ and single for simple.
 Hey, I got this to work!
 
 your solution here
+#this is the print method
+print("Hey, I got this to work!")
+
+#AG --> The above output returns a standard reponse, probably more elegant
+
+#this is the non-print / pythonic 3.0 method
+("Hey, I got this to work!")
+
+#AG --> The pythonic method seems to return an STDOUT response
 
 # use end = " " to create this output
 Heading1| Heading2| Heading|
 
 your solution here
 
+print("Heading1|", "xyz", end="abc")
+print("Heading2|", end=" ")
+print("Heading3|", end=" ")
+
+"""AG --> The comma ',' is like a separator, similar to the plus '+'
+However, the comma doesn't join / concatenate - there is a single whitespace left
+between the two objects
+"""
 
 # Printing a variable
 cost = 24.00
@@ -386,10 +409,10 @@ int(hours) * wage
 
 """Let's convert an input into an integer"""
 
-wage = int(input("Enter wage :"))
+wage = int(input("Enter wage :$"))
 hours = int(input("Enter hours worked:"))
 #finish the code enter a prompt asking for number of weeks worked
-weeks = 
+weeks = int(input("Enter number of weeks worked:"))
 
 print('Salary is', wage * hours * weeks)
 
@@ -403,7 +426,16 @@ Bonus: Once you have the script working copy it and past it into its own script
 save it as tipcalc in your pythonscripts folder and try running it from cmd
 """
 
+bill = int(input("Enter the bill amount:$"))
+tip = int(input("Enter the tip percentage:%"))
+
+# the final bill is calculated as the bill plus the tip as a percentage of the bill amount
+final_bill = round(bill * (1 + (tip / 100)))
+print("Your final bill is :$", final_bill)
+
 input("click enter to exit")
+
+
 ###############################################################################
 ##                            ERRORS                                         ##
 ###############################################################################
@@ -443,24 +475,29 @@ brackets [ ] containing the index:
    
 pet = 'Cat'
 print(pet[0])
-print(pet[0], pet[1],)# complete this to bring back "t"
+print(pet[0], pet[1], pet[2])# complete this to bring back "t"
 print(pet[0:2])
 
 # slicing
 po = "110010125001" #locId 3 digits | Date 6 digits | Seq 3 digits
 print(po[0:3])      # on your second loop take out the quotes and solve
 loc = po[0:3]
-print("The location is",loc)
+
+seq = po[9:12]
+print("The location is", loc)
+
+
 
 # slicing
 po[-1]       # returns end of the string
 print(po[-3:])
-seq =         # finish the code
-print         # finish the code to behave like the loc print statement
+seq = po[-3:]        # finish the code
+print("The sequence is", seq)        # finish the code to behave like the loc print statement
 
 ## EXERCISE SLICE THE DATA
 # Expected outcom 010125
-
+dates = po[3:9]
+print("The date is", dates)
 
 # concatenating concats are the same as Excel or SQL you can concat blanks or multiple columns
 pets = "cat"
@@ -475,7 +512,7 @@ concat = string_1 + string_2
 print('Easy as ' + concat)
 
 # concatenating ()
-5 + ' there'   # cast 5 to a string str() in order for this to work
+str(5) + ' there'   # cast 5 to a string str() in order for this to work
 
 ### EXERCISE ###
 """
@@ -487,10 +524,11 @@ Sample output for given program
 #hint concat or combine was not used in requirements
 """
 current_time = '2014-07-26 02:12:18:'
-my_city = 
-my_state = 
+my_city = "Bukit Panjang"
+my_state = "Singapore"
 log_entry = ''' Your solution goes here '''
 
+# AG --> Not sure how this can be done without combine or concat?! 
 print(log_entry)
 
 
@@ -521,6 +559,9 @@ print(state)
 ## EXERCISE USE slicing and string functions to bring state back as WA
 
 '''your solution here'''
+state = "washington"
+short_state = state[:2].upper()
+print(short_state)
 
 
 ### EXERCISE READING MULTIPLE DATA TYPES ###
@@ -530,6 +571,7 @@ q2 = input('What is your favorite number?') # make this input an integer int()
 # concate q1 and q2 into a variable answers
 
 ''' Your solution goes here '''
+answers = q1 + " and " + q2
 
 print('my answers are: ',answers)
 
@@ -541,6 +583,10 @@ expected output Loc:860 Date: 11/15/25 Seq:860'''
 
 po = "86011152025001"
 ''' your solution here'''
+loc = po[:3]
+dates = po[3:5] + "/" + po[5:7] + "/" + po[7:9]
+seq = po[-3:]
+print(f"Loc:{loc}",f"Date: {dates}",f"Seq:{seq}")
 
 
 """
@@ -573,7 +619,7 @@ print("I have %d %r and %d %r"%(c,b,c,a))
 
 """
 #A 'Mad Libs' style game where user enters nouns,
-#verbs, etc., and then a story using those words is ouput.
+#verbs, etc., and then a story using those words is output.
 """
 
 ### EXERCISE FIX THE CODE
