@@ -3,6 +3,11 @@
 Created on Wed Feb  5 15:18:06 2020
 
 @author: Matthew Morris
+
+Modified on Mon Dec 18 16:50 2023
+
+@modifier: kampungkat / AG
+
 """
 
 ###############################################################################
@@ -126,7 +131,10 @@ or lose track and have them set up incorrectly
 
 ## EXERCISE find the area of a room use inputs Length x Width = Area
 
-
+length = int(input("Enter the length of the room: "))
+width = int(input("Enter the width / breadth of the room: "))
+room_area = length * width
+print("The area of the room is", room_area)
 
 
 
@@ -175,8 +183,10 @@ x /= 5       #divides
 ##EXERCISE build an equation or formula that you use at home or work
 ## use various rounding to bring back various precision
 
-
-
+imps = int(input("Enter the number of impressions: "))
+rev_goal = float(input("Enter the invoiced amount: $"))
+cpm = round((rev_goal / imps) * 1000, 3)
+print("The CPM for this campaign is", cpm)
 
 
 
@@ -185,6 +195,10 @@ items = 0
 items = items + 42
 print(items)
 
+Solution
+items = 0
+items += 42
+print(items)
 
 
 ###############################################################################
@@ -200,7 +214,9 @@ You can bring in the entire math module or just pieces.
 It is good practice to try and bring in just the pieces you will use.
 You might be using enough that it is easier to just bring in the entire module
 """
-import math as
+import math as m
+
+from math import *
 
 
 # import what is needed
@@ -274,6 +290,9 @@ http://docs.python.org/3.7/library/math.html has a complete listing.
 
 ## EXERCISE using from and import together find the square root of 42
 
+from math import sqrt
+print(sqrt(42))
+
 
 
 ###############################################################################
@@ -319,14 +338,15 @@ a < 5 or not a == 1
 
 
 ## EXERCISE using from and import together find the square root of 42
-
+?
 
 
 '''
 EXERCISE Create several boolian functions:
 1) brings back true
 2) brings back false
-3) uses or and brings back false4) uses and and brings back true
+3) uses or and brings back false
+4) uses and and brings back true
 '''
 
 
@@ -349,6 +369,8 @@ print(x not in [1,2,3,4])
 # EXERCISE use assign x the value of 10 and then show an example of x 
 # not equalling 11 expecte output: True
 
+x = 10
+print("x is definitely not equal to 11", x != 11)
 
 # Variables and Math and identifiers
 '''  A variable is a container to hold a value
@@ -380,8 +402,10 @@ price and see the result
 2) using boolean logic evaluate that the price has not exceed a 20% markup
     expected out put: True or False''' 
 
-
-
+cost_price = float(input("Enter the cost of the article: $"))
+selling_price = float(input("Enter the sale price of the article: $"))
+markup = selling_price - cost_price
+print("Is the markup 20% or less of the cost price?", markup <= (cost_price * 0.2))
 
 ###############################################################################
 # IF THEN ELIF ELSE AND 3 VALUE LOGIC
@@ -426,7 +450,8 @@ if weather == "Sunny" and day == "Monday" and time == "5am" and season == "Winte
     print("dont garden")
 elif weather == "Sunny" and day == "Saturday" and time == "10am" and season == "Spring": 
     print("Garden")
-else: print("Need more data")
+else: 
+    print("Need more data")
 
 
     
@@ -436,10 +461,12 @@ Write an expression using Boolean operators that prints "Eligible" if user_age
 is greater than 17 and not equal to 25. Ex: 17 prints "Ineligible", 18 prints 
 "Eligible".
 """
-user_age = 17
+user_age = 13
 
-if ''' Your solution goes here ''':
+if user_age > 17:
     print('Eligible')
+elif user_age != 25 and user_age > 17:
+    print("Eligible")
 else:
     print('Ineligible') 
 
@@ -450,7 +477,10 @@ if 'WA' in nw:
 else:
     print('not Northwest')
 # or try this
-'CA' in nw
+if 'CA' in nw:
+    print("Northwest")
+else:
+    print("not Northwest")
 
 
 # Use the "not in" operator
@@ -509,6 +539,16 @@ If it is in range bring back directions to keep same
 #IMU evaluation and suggestions.
 
 
+article = input("Enter the item being sold: ")
+cost = float(input("Enter the cost price: $"))
+selling_price = float(input("Enter the sale price: $"))
+markup = selling_price - cost
+if markup > 0.14 * cost:
+    print("The markup for", article, "is too high. Mark it down.")
+elif markup < 0.02 * cost:
+    print("The markup for", article, "is too low. Mark it up.")
+else:
+    print("The markup for", article, "seems correct. Leave the prices as they are.")
 
 
 

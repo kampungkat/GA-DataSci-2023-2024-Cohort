@@ -11,12 +11,12 @@ Created on Wed Feb  5 15:18:06 2020
 ###############################################################################
 #--- BASIC MATH
 ###############################################################################
-print( 2  2 )       #addition
-print( 2  2 )       #subtraction
-print( 2  2 )      #power of
-print( 5  2 )       #modulus
-print( 2.1  2 )     #division, always results in float
-print( 2.1  2 )     #division, always results in integer
+print( 2 + 2 )       #addition
+print( 2 - 2 )       #subtraction
+print( 2 ** 2 )      #power of
+print( 5 % 2 )       #modulus
+print( 2.1 / 2 )     #division, always results in float
+print( 2.1 // 2 )     #division, always results in integer
 
 ## ROUNDING
 x = (1000000 / 3)
@@ -35,21 +35,23 @@ print()
 
 
 ## MATH COMPRESSION
-x  10       #assignment
-x  5       #adds
-x  5       #subtracts
-x  5       #multiples
-x  5       #divides
+x = 10       #assignment
+x += 5       #adds
+x -= 5       #subtracts
+x *= 5       #multiples
+x /= 5       #divides
+print(x)
 
 #####################
 ## MATH MODULE
 #####################
+from math import ceil, floor, sqrt, pow
 
-print((4))    # notice the .dot notation
-print((4.2))  # 4.2 roundup to whole number
-print((4.2)) # 4.2 rounddown to whole number
-print((4.2))  # square root of 4.2
-print((4.2,2)) # 4.2 to the power of 2 (4.2 *4.2)
+print(float(4))    # notice the .dot notation
+print(ceil(4.2))  # 4.2 roundup to whole number
+print(floor(4.2)) # 4.2 rounddown to whole number
+print(sqrt(4.2))  # square root of 4.2
+print(pow(4.2,2)) # 4.2 to the power of 2 (4.2 *4.2)
 
 """
 Common math module functions
@@ -85,15 +87,15 @@ http://docs.python.org/3.7/library/math.html has a complete listing.
 ## BOOLEAN
 
 print("Is it true that 3 + 2 < 5 - 7?")
-answer = ()
-print()
+answer = (3 + 2 < 5 - 7)
+print("The answer is", answer)
 
 a= 5
 b = -2
-print("Is a greater?", )
-print("Is a greater or equal?", )
-print("Is a less or equal?",)
-print("what if we add 1 to b then is  b equal or greater?",)
+print("Is a greater?", a > b)
+print("Is a greater or equal?", a >= b)
+print("Is a less or equal?", a <= b)
+print("what if we add 1 to b then is  b equal or greater?", a <= b + 1)
 
 
 ## AND OR NOT
@@ -101,8 +103,8 @@ a = 5
 b = 10
 c = 15
 # this is different then chaining, you can control the comparisions
-a < 5  a == 1 # if either compariasions are false then false
-a < 5  a == 1 #  if either comparisions are true then true
+a < 5 or a == 1 # if either compariasions are false then false
+a < 5 or a == 1 #  if either comparisions are true then true
 a < 5 and not a == 1
 a < 5 or not a == 1
 
@@ -110,22 +112,24 @@ a < 5 or not a == 1
 #---  comparison operators  --- 
 ################################
 x = 4
-print( x  2 )       # x less than
-print(x  2 )        #  x greater than
-print( x  4 )      #  x less than or equal to
-print(x  2 )       #  x greater than or equal to
-print( x  2 )      #  x equal to
-print( x  2 )      #  x not equal to
+print( x < 2 )       # x less than
+print(x > 2 )        #  x greater than
+print( x <= 4 )      #  x less than or equal to
+print(x >= 2 )       #  x greater than or equal to
+print( x == 2 )      #  x equal to
+print( x != 2 )      #  x not equal to
                    # Give example of using in
                    # Give example of using not in
 
 # in your own words what is the difference between = and ==
-'''your answer here'''
 
+""" = is an assignment operator, which connects a value to a variable
+== is a comparison operator, which checks if the value held in a variable is the same as the value on the right of the ==
+"""
 # if-else statements.
 days = 45
-days > 30  days < 90 
-print("late fee")
+if days > 30 and days < 90:
+    print("late fee")
 
 # Multiple filters and conditionals 
 weather = "Sunny"
@@ -134,11 +138,12 @@ time = "5am"
 season = "SUMMER"
 
 
-weather == "Sunny" day == "Monday" time == "5am" season == "Winter" 
-print("dont garden")
-weather == "Sunny" day == "Saturday" time == "10am" season == "Spring" 
-print("Garden")
-print("Need more data")
+if weather == "Sunny" and day == "Monday" and time == "5am" and season == "Winter":
+    print("dont garden")
+elif weather == "Sunny" and day == "Saturday" and time == "10am" and season == "Spring":
+    print("Garden")
+else:
+    print("Need more data")
 
 
 ###########################################
@@ -146,12 +151,15 @@ print("Need more data")
 ###########################################
 
 nw = ['WA', 'OR', 'ID']
-'CA'  nw
+if 'CA' in nw:
     print('Northwest')
 else:
     print('not Northwest')
 # or try this
-'CA' in nw
+if 'CA' in nw:
+    print("Northwest")
+else:
+    print("not Northwest")
 
 
     
