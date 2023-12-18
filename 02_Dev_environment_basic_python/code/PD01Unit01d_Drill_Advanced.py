@@ -2,10 +2,12 @@
 """
 Created on Wed Feb  5 08:45:14 2020
 
-Create by Matthew Morris
-matthew.s.morris@outlook.com
-msmorris@amazon.com
-(206)915-7827
+Created by Matthew Morris
+
+Modified on Mon Dec 18 15:20 2023
+
+Modified by kampungkat / AG
+
 """
 
 # Python for data I
@@ -19,11 +21,19 @@ work without looking anything up'''
 Hey, I got this to work!
 
 your solution here
+#print method
+print("Hey, I got this to work!")
+
+# non-print / python 3 method
+("Hey, I got this to work!")
 
 # use end = " " to create this output
 Heading1| Heading2| Heading|
 
 your solution here
+print("Heading1|", end = " ")
+print("Heading2|", end = " ")
+print("Heading3|", end = " ")
 
 
 ### EXERCISE Pay calculator ###
@@ -32,6 +42,10 @@ your solution here
 # I will need to pay petsitter 80
 
 your solution here
+hourly_wage = int(input("Enter your wages per hour: $"))
+hours = int(input("Enter the number of hours worked last week: "))
+pay = hourly_wage * hours
+print("I will need to pay", pay)
 
 
 ## EXERCISE
@@ -41,6 +55,10 @@ Build a tip calculator with dynamic inputs
 Bonus: Once you have the script working copy it and past it into its own script
 save it as tipcalc in your pythonscripts folder and try running it from cmd
 """
+bill = int(input("Enter the bill amount: $"))
+tip_percent = int(input("Enter the tip percentage: %"))
+final_bill = round(bill * (1 + tip_percent / 100), 2)
+print(f"The final bill is ${final_bill}")
 
 
 ### EXERCISE ###
@@ -53,8 +71,8 @@ Sample output for given program
 #hint concat or combine was not used in requirements
 """
 current_time = '2014-07-26 02:12:18:'
-my_city = 
-my_state = 
+my_city = "Hill View"
+my_state = "Singapore"
 log_entry = ''' Your solution goes here '''
 
 print(log_entry)
@@ -64,6 +82,8 @@ print(log_entry)
 ## EXERCISE USE slicing and string functions to bring state back as WA
 state = "washington"
 '''your solution here'''
+state = state[:2].upper()
+print(state)
 
 
 ### EXERCISE READING MULTIPLE DATA TYPES ###
@@ -73,6 +93,7 @@ q2 = input('What is your favorite number?') # make this input an integer int()
 # concate q1 and q2 into a variable answers
 
 ''' Your solution goes here '''
+answers = q1 + " and " + q2
 
 print('my answers are: ',answers)
 
@@ -84,6 +105,10 @@ expected output Loc:860 Date: 11/15/25 Seq:860'''
 
 po = "86011152025001"
 ''' your solution here'''
+loc = po[:3]
+dates = po[3:9]
+seq = po[-3:]
+print(f"Loc:{loc} Date: {dates} Seq:{seq}")
 
 
 ### EXERCISE FIX THE CODE
@@ -94,9 +119,9 @@ adjective = input('Enter an adjective: ')
 period = input('Enter a time period: ')
 
 # Tell the story
-print('My', relative, 'says eating', food)
-print('will make me more', adjective)
-print('so now I eat it every', period)
+print('My {} says eating {}'.format(relative, food))
+print("will make me more {}".format(adjective))
+print('so now I eat it every {}'.format(period))
 
 
 
