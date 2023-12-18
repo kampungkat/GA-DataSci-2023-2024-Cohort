@@ -3,6 +3,10 @@
 Created on Wed Feb  5 07:49:08 2020
 
 @author: msmorris
+
+Modified on Mon Dec 18, 15:00 2023
+
+@modifier: kampungkat / AG
 """
 
 ###############################################################################
@@ -17,14 +21,14 @@ print("header1")
 print("header2")
 
 # Printing a variable
-
+cost = 9
 print(cost)
 
 # Concating variables an strings using a comma
 cost = 24.00
 tip = .2
-total = 
-print("I should tip:")
+total = cost + (cost * tip)
+print("I should tip:", total)
 
 
 username = input() #enter a name in the console and hit Enter
@@ -36,32 +40,32 @@ float() float
 
 hours = '40'
 wage = 20
-  * wage
+salary = int(hours)  * wage
 
 
 #convert an input into an integer
-wage = input("Enter wage :")
+wage = int(input("Enter wage :"))
 
 
 #slicing   
 pet = 'Cat'
-print(pet) #expected output C
-print(pet[], pet,)# Expected output C a t
-print(pet[]) # Expected output Cat
-print(pet[]) #Expected output t
-print(pet[]) #Expected output at
+print(pet[0]) #expected output C
+print(pet[0], pet[1], pet[2])# Expected output C a t
+print(pet[:3]) # Expected output Cat
+print(pet[-1]) #Expected output t
+print(pet[-2:]) #Expected output at
 
 
 
 # concatenating ()
 print("hello" ) # add a seperate string "there and concatenate in same print
-print(5 + ' there')   # cast 5 to a string in order for this to work
+print(str(5) + ' there')   # cast 5 to a string in order for this to work
 
 
 # uppercasing
 state = "washington"
-state.      # make state uppercase
-state        # make state title case
+state.upper()      # make state uppercase
+state.capitalize()        # make state title case
 
 
 ## imputing variables into a string 2 methods
@@ -75,7 +79,7 @@ a = 'cats'
 b = 'dogs'
 c = 5
 
-print("I have % % and % %") %(c,b,c,a)
+print("I have %d %s and %d %s") %(c,b,c,a)
 
 
 
@@ -83,10 +87,10 @@ print("I have % % and % %") %(c,b,c,a)
 a = 'cats'
 b = 'dogs'
 c = 5
-("I have {} {} and {} {}").format()
+("I have {} {} and {} {}").format(c, b, c, a)
 
 x = "fun"
-print("Mad_libs is a {} game"(x))
+print("Mad_libs is a {} game".format(x))
 
 ##Example 2
-print("Mad_libs is a .".format("fun","game"))
+print("Mad_libs is a {} {}".format("fun","game"))
