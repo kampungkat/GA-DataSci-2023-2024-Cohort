@@ -58,7 +58,12 @@ dynamic inputs and have it use parameters. Hint inputs always take your numbers
 and turn them into strings. you will need to fix that piece.
 '''
 '''your solution here'''
+def area(l,b):
+    return l * b
 
+lh = float(input("Enter length: "))
+bh = float(input("Enter breadth: "))
+round(area(lh, bh), 2)
 
 
 #################################RETURN########################################
@@ -69,18 +74,18 @@ Complete the program by writing and calling a function that converts a
 temperature from Celsius into Fahrenheit. Use the formula F = C x 9/5 + 32. 
 Test your program knowing that 50 Celsius is 122 Fahrenheit. 
 """
-def c_to_f():
-    # FIXME
-    return  # FIXME: 
+def c_to_f(c):
+    f = (c * 9 / 5) + 32
+    return f 
 
 temp_c = float(input('Enter temperature in Celsius: '))
 temp_f = None
 
-# FIXME: Call conversion function
-# temp_f = ??
 
-# FIXME: Print result
-# print('Fahrenheit:' , temp_f)
+temp_f = c_to_f(temp_c)
+
+
+print('Fahrenheit:' , temp_f)
 
 
 ###########################FUNCTION STUBS######################################
@@ -98,6 +103,14 @@ FIXME: Finish compute_avg()
 Avg: -1
 """
 ''' Your solution goes here '''
+
+def get_user_num():
+    print("FIXME: Finish get_user_num()")
+    return -1
+
+def compute_avg(num1, num2):
+    print("FIXME: Finish compute_avg()")
+    return -1
 
 user_num1 = 0
 user_num2 = 0

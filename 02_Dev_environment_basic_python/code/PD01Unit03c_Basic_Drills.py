@@ -33,12 +33,13 @@ Created on Thu Feb 13 10:03:33 2020
 
 #############USER-DEFINED FUNCTION BASICS CONCEPT AND SYNTAX###################
 
-def ux
+def ux():
     print ("Here is a function that is listing out printing techniques.")
     print ('Single quotes work too!')
     print ("I'd  'use' double quotes to encapsulate 'single' quotes in your prints.")
     print ('OK "maybe"  one more')
 
+ux()
 
 ############A&P OF FUNCTIONS( Use of arguments or arg!)#######################
 
@@ -50,7 +51,7 @@ def print_none()
 print_none()
 
 #This function will take 1 argument
-def print_one():
+def print_one(x):
     print (x) # 
 print_one("x allows me to pass in a usable variable")
 print_one()
@@ -58,7 +59,7 @@ print_one()
 # This function will take 2 arguments
 def print_two(x, y):
     print (x,y)
-print_two(, "< that number is the x variables/argument. This is the y")
+print_two(5, "< that number is the x variables/argument. This is the y")
 
 
 # Math functions and arguments
@@ -99,13 +100,14 @@ returnexample2()
 ###########################FUNCTION STUBS######################################
 #Using the pass statement in a function stub performs no operation.
 def steps_to_calories(num_steps):
+    pass
       
 
 
 # Stopping the program using NotImplementedError in a function stub.
 def get_points(num_points):
     """Get num_points from the user. Return a list of (x,y) tuples."""
-    raise 
+    raise NotImplementedError() 
 get_points(1)        
 
 
@@ -113,7 +115,21 @@ get_points(1)
 ######################################################
 ## 07.16 HELP! USING DOCSTRINGS TO DOCUMENT FUNCTIONS
 ######################################################
-def function_name(parameter_list):
+def docstrings(sometext):
+    """
     
-help()
+
+    Parameters
+    ----------
+    sometext : a simple string
+        Docstrings are used to explain and define what and how a function works.
+        They're particularly useful to annotate how code blocks work with each other.
+
+    Returns
+    -------
+    None.
+
+    """
+    
+help(docstrings)
 

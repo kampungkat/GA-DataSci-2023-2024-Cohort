@@ -3,6 +3,8 @@
 Created on Thu Feb 13 10:03:33 2020
 
 @author: msmorris
+
+@modifier: kampungkat
 """
 
 ###############################################################################
@@ -102,14 +104,14 @@ printline(input('What symbol would you like as a line?'))
 
 ## uncomment the Print nose line and see if you can get it to work
 # add a another argument and symbol for nose
-def print_face(eye, face_char):
+def print_face(eye, face_char, nose):
 
    print('  ', eye, ' ', eye)  # Print eyes
-#                              # Print nose
+   print("    ", nose)                           # Print nose
    print('  ', face_char*5)    # Print mouth
    return
 
-print_face('o', 'x',)
+print_face('o', 'x', 'A')
 
 
 
@@ -122,7 +124,7 @@ add(10, 20)
 
 
 # subtraction
-a=in
+a=12
 b=5
 def subtract(a, b):
    return a - b
@@ -142,7 +144,12 @@ dynamic inputs and have it use parameters. Hint inputs always take your numbers
 and turn them into strings. you will need to fix that piece.
 '''
 '''your solution here'''
+def area(l, b):
+    return l * b
 
+length = int(input("Enter length: "))
+breadth = int(input("Enter breadth: "))
+area(length, breadth)
 
 
 #################################RETURN########################################
@@ -193,18 +200,18 @@ Complete the program by writing and calling a function that converts a
 temperature from Celsius into Fahrenheit. Use the formula F = C x 9/5 + 32. 
 Test your program knowing that 50 Celsius is 122 Fahrenheit. 
 """
-def c_to_f():
-    # FIXME
-    return  # FIXME: 
+def c_to_f(c):
+    f = (c * 9 / 5) + 32
+    return f 
 
 temp_c = float(input('Enter temperature in Celsius: '))
 temp_f = None
 
-# FIXME: Call conversion function
-# temp_f = ??
 
-# FIXME: Print result
-# print('Fahrenheit:' , temp_f)
+temp_f = round(c_to_f(temp_c), 2)
+
+
+print('Fahrenheit:' , temp_f)
 
 
 ######################DECOMPOSING A PROCESS####################################
@@ -307,6 +314,14 @@ FIXME: Finish compute_avg()
 Avg: -1
 """
 ''' Your solution goes here '''
+def get_user_num():
+    print("FIXME: Finish get_user_num()")
+    return -1
+
+def compute_avg(num1, num2):
+    print("FIXME: Finish compute_avg()")
+    return -1
+
 
 user_num1 = 0
 user_num2 = 0
@@ -373,7 +388,7 @@ Run the following program that prints out the response of help(ticket_price).
 Add an additional parameter "vegetarian=False" to ticket_price, augment the 
 docstring appropriately, and run the program again.
 """
-def ticket_price(origin, destination, coach=True, first_class=False):
+def ticket_price(origin, destination, coach=True, first_class=False, vegetarian=False):
     """Calculates the price of a ticket between two airports.
     Only one of coach or first_class must be True.
 
@@ -385,6 +400,8 @@ def ticket_price(origin, destination, coach=True, first_class=False):
     coach -- Boolean. True if ticket cost priced for a coach class ticket 
     (default True)
     first_class -- Boolean. True if ticket cost priced for a first class ticket 
+    (default False)
+    vegetarian -- Boolean. True if traveller indicates preference vegetarian food
     (default False)
 
     """
@@ -424,7 +441,7 @@ Step 4 Do not limit yourself to what you know. Design what you want to build
 and then we will figure it out from there. 
 '''
 
-
+## TBD ##
 
 
 
@@ -438,4 +455,4 @@ so far, what do you want to do and we will work backwards from there, or forward
 as we learn new skills. 
 
 HINT: Soon we will learn how to load and read files plus do some basic statistics
-over those files. 
+over those files. '''
